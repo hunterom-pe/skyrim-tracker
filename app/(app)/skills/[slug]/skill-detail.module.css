@@ -1,0 +1,85 @@
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.back {
+  display: inline-block;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.back:hover {
+  color: var(--color-text);
+}
+
+.header {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 1.75rem;
+  color: var(--color-accent-strong);
+}
+
+.level {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: #241a05;
+  background: linear-gradient(180deg, var(--color-accent-strong), var(--color-accent));
+  border-radius: 999px;
+  padding: 0.2rem 0.75rem;
+}
+
+.description {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.logButton {
+  align-self: flex-start;
+  text-decoration: none;
+  margin-top: 0.25rem;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-panel-border);
+}
+
+.perkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.empty {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}

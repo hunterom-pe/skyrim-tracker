@@ -10,7 +10,11 @@ export function SkillCard({ skill }: { skill: Skill }) {
   return (
     <div className={`${styles.card} panel`}>
       <div className={styles.header}>
-        <h3 className={styles.name}>{skill.name}</h3>
+        <h3 className={styles.name}>
+          <Link href={`/skills/${skill.slug}`} className={styles.nameLink}>
+            {skill.name}
+          </Link>
+        </h3>
         <span className={styles.level}>Lvl {skill.current_level}</span>
       </div>
       <p className={styles.description}>{skill.description}</p>

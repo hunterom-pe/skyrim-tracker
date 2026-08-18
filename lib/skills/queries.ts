@@ -8,3 +8,14 @@ export async function getSkills(): Promise<Skill[]> {
   if (error) throw error;
   return data ?? [];
 }
+
+export async function getSkillBySlug(slug: string): Promise<Skill | null> {
+  const supabase = createClient();
+  const { data, error } = await supabase
+    .from("skills")
+    .select("*")
+    .eq("slug", slug)
+    .maybeSingle();
+  if (error) throw error;
+  return data;
+}

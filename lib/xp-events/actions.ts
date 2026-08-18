@@ -99,6 +99,7 @@ export async function logSession(
 
   revalidatePath("/");
   revalidatePath("/log");
+  revalidatePath(`/skills/${skill.slug}`);
 
   return {
     status: "success",

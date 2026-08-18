@@ -17,6 +17,15 @@
   color: var(--color-text);
 }
 
+.nameLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nameLink:hover {
+  color: var(--color-accent-strong);
+}
+
 .level {
   flex-shrink: 0;
   font-family: var(--font-heading);

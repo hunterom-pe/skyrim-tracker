@@ -1,0 +1,45 @@
+.entry {
+  padding: 0.85rem 1.1rem;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.skillName {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+}
+
+.date {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.duration {
+  color: var(--color-text-muted);
+}
+
+.xp {
+  color: var(--color-accent-strong);
+  font-weight: 600;
+}
+
+.note {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.4;
+}

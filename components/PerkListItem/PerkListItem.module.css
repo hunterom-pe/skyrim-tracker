@@ -1,0 +1,71 @@
+.perk {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.unlockLevel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.badge {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.7rem;
+  color: #241a05;
+  background: linear-gradient(180deg, var(--color-accent-strong), var(--color-accent));
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+}
+
+.lockIcon {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.skillName {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.description {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.locked {
+  opacity: 0.55;
+}
+
+.locked .name {
+  color: var(--color-text-muted);
+}
+
+.unlocked {
+  border-color: var(--color-accent-dim);
+}
+
+.unlocked .name {
+  color: var(--color-accent-strong);
+}
