@@ -15,6 +15,12 @@ export function Nav() {
         <Link href="/log" className={styles.link}>
           Log Session
         </Link>
+        <Link href="/history" className={styles.link}>
+          Quest Journal
+        </Link>
+        <Link href="/perks" className={styles.link}>
+          Perks Earned
+        </Link>
       </nav>
       <form action={logout}>
         <button type="submit" className="button-secondary">

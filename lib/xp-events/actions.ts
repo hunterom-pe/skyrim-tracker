@@ -100,6 +100,8 @@ export async function logSession(
   revalidatePath("/");
   revalidatePath("/log");
   revalidatePath(`/skills/${skill.slug}`);
+  revalidatePath("/history");
+  revalidatePath("/perks");
 
   return {
     status: "success",
