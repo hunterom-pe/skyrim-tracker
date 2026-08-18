@@ -1,0 +1,34 @@
+.banner {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  background:
+    radial-gradient(ellipse at top, rgba(214, 175, 54, 0.08), transparent 60%),
+    var(--color-panel);
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+}
+
+.level {
+  margin: 0.25rem 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--color-accent-strong);
+  text-shadow: 0 0 24px rgba(214, 175, 54, 0.35);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+}
