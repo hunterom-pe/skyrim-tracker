@@ -8,6 +8,7 @@ import { xpToNextLevel } from "@/lib/xp";
 import { XpBar } from "@/components/XpBar/XpBar";
 import { PerkListItem } from "@/components/PerkListItem/PerkListItem";
 import { SessionEntry } from "@/components/SessionEntry/SessionEntry";
+import { SKILL_ICONS } from "@/components/icons/SkillIcons";
 import styles from "./skill-detail.module.css";
 
 export const dynamic = "force-dynamic";
@@ -31,6 +32,7 @@ export default async function SkillDetailPage(props: PageProps<"/skills/[slug]">
   ]);
 
   const xpToNext = xpToNextLevel(skill.current_level);
+  const Icon = SKILL_ICONS[skill.slug];
 
   return (
     <div className={styles.wrap}>
@@ -40,7 +42,10 @@ export default async function SkillDetailPage(props: PageProps<"/skills/[slug]">
 
       <div className={`${styles.header} panel panel-framed`}>
         <div className={styles.headerTop}>
-          <h1 className={styles.name}>{skill.name}</h1>
+          <h1 className={styles.name}>
+            {Icon ? <Icon className={styles.icon} /> : null}
+            {skill.name}
+          </h1>
           <span className={styles.level}>Lvl {skill.current_level}</span>
         </div>
         <p className={styles.description}>{skill.description}</p>

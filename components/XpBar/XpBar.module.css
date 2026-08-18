@@ -4,23 +4,46 @@
   gap: 0.35rem;
 }
 
+/* A carved channel the fill sits inside, like a groove chiseled into the
+   panel rather than a flat bar drawn on top of it. */
 .track {
+  position: relative;
   height: 10px;
   border-radius: 999px;
   background: var(--color-bg);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.75),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
   overflow: hidden;
 }
 
 .fill {
+  position: relative;
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--color-accent-dim), var(--color-accent-strong));
-  box-shadow: 0 0 6px rgba(214, 175, 54, 0.5);
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, #8a5a12, var(--color-accent) 55%, #ffe6a3);
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* A bright molten cap at the leading edge of the fill. */
+.fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 100%;
+  border-radius: 999px;
+  background: #fff1cf;
+  box-shadow:
+    0 0 10px 2px rgba(255, 224, 140, 0.85),
+    0 0 4px rgba(255, 255, 255, 0.7);
 }
 
 .label {
+  font-family: var(--font-heading);
+  font-weight: 600;
   font-size: 0.75rem;
   color: var(--color-text-muted);
   text-align: right;
