@@ -41,8 +41,8 @@
   pointer-events: auto;
 }
 
-/* Always wins over any other animation on the toast, including the perk
-   glow-pulse loop, so dismissal reads consistently across toast kinds. */
+/* Always wins over any other animation on the toast, including the
+   level-up glow-pulse loop, so dismissal reads consistently. */
 .leaving {
   animation: toast-out 0.22s ease-in forwards !important;
 }
@@ -66,30 +66,6 @@
   font-size: 0.85rem;
 }
 
-.levelup {
-  text-align: center;
-  border-color: var(--color-accent-dim);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.04),
-    inset 0 0 0 1px rgba(0, 0, 0, 0.35),
-    0 0 16px rgba(214, 175, 54, 0.15),
-    0 2px 10px rgba(0, 0, 0, 0.35);
-}
-
-.levelupText {
-  margin: 0;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  color: var(--color-accent-strong);
-  letter-spacing: 0.02em;
-}
-
-.levelupSubtext {
-  margin: 0.2rem 0 0;
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-}
-
 @keyframes toast-in-pop {
   from {
     opacity: 0;
@@ -105,52 +81,99 @@
   }
 }
 
-@keyframes perk-glow-pulse {
+@keyframes levelup-glow-pulse {
   0%,
   100% {
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
       inset 0 0 0 1px rgba(0, 0, 0, 0.35),
-      0 0 24px rgba(214, 175, 54, 0.28),
-      0 2px 12px rgba(0, 0, 0, 0.4);
+      0 0 16px rgba(214, 175, 54, 0.18),
+      0 2px 10px rgba(0, 0, 0, 0.35);
   }
   50% {
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
       inset 0 0 0 1px rgba(0, 0, 0, 0.35),
-      0 0 36px rgba(214, 175, 54, 0.45),
-      0 2px 12px rgba(0, 0, 0, 0.4);
+      0 0 26px rgba(214, 175, 54, 0.32),
+      0 2px 10px rgba(0, 0, 0, 0.35);
   }
 }
 
-.perk {
+.levelup {
+  position: relative;
+  overflow: hidden;
   text-align: center;
-  padding: 1rem 1.25rem;
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-dim);
   animation:
     toast-in-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-    perk-glow-pulse 2.2s ease-in-out 0.35s infinite;
+    levelup-glow-pulse 2s ease-in-out 0.35s infinite;
 }
 
-.perkEyebrow {
-  margin: 0 0 0.3rem;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--color-accent);
-}
-
-.perkName {
-  margin: 0 0 0.35rem;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--color-accent-strong);
-}
-
-.perkDescription {
+.levelupText {
+  position: relative;
   margin: 0;
-  font-size: 0.85rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-accent-strong);
+  letter-spacing: 0.02em;
+}
+
+.levelupSubtext {
+  position: relative;
+  margin: 0.2rem 0 0;
+  font-size: 0.8rem;
   color: var(--color-text-muted);
-  line-height: 1.4;
+}
+
+@keyframes sparkle-twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-accent-strong);
+  box-shadow: 0 0 6px 1px rgba(244, 207, 110, 0.9);
+  pointer-events: none;
+  animation: sparkle-twinkle 1.6s ease-in-out infinite;
+}
+
+.sparkle0 {
+  top: 10%;
+  left: 12%;
+  animation-delay: 0s;
+}
+
+.sparkle1 {
+  top: 18%;
+  right: 10%;
+  animation-delay: 0.3s;
+}
+
+.sparkle2 {
+  bottom: 14%;
+  left: 20%;
+  animation-delay: 0.6s;
+}
+
+.sparkle3 {
+  bottom: 20%;
+  right: 16%;
+  animation-delay: 0.9s;
+}
+
+.sparkle4 {
+  top: 45%;
+  left: 6%;
+  animation-delay: 1.2s;
 }

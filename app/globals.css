@@ -74,6 +74,33 @@ body::before {
   z-index: 0;
 }
 
+/* A slow, gentle amber vignette at the edges — meant to be felt as ambient
+   torchlight, not consciously noticed. */
+@keyframes candlelight-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(120, 60, 10, 0.22) 85%,
+    rgba(80, 35, 5, 0.4) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+  animation: candlelight-pulse 8s ease-in-out infinite;
+}
+
 h1,
 h2,
 h3,
