@@ -74,15 +74,18 @@ body::before {
   z-index: 0;
 }
 
-/* A slow, gentle amber vignette at the edges — meant to be felt as ambient
-   torchlight, not consciously noticed. */
+/* A slow, warm amber vignette at the edges, suggesting flickering
+   torchlight. First pass at this was tuned too low-alpha/desaturated to
+   read against the existing dark-brown background — bumped the color
+   toward the actual amber accent and roughly doubled the outer alpha so
+   it's genuinely visible in the corners without washing out the cards. */
 @keyframes candlelight-pulse {
   0%,
   100% {
-    opacity: 0.55;
+    opacity: 0.7;
   }
   50% {
-    opacity: 0.85;
+    opacity: 1;
   }
 }
 
@@ -92,9 +95,9 @@ body::after {
   inset: 0;
   background: radial-gradient(
     ellipse at center,
-    transparent 40%,
-    rgba(120, 60, 10, 0.22) 85%,
-    rgba(80, 35, 5, 0.4) 100%
+    transparent 35%,
+    rgba(214, 130, 40, 0.12) 70%,
+    rgba(180, 90, 20, 0.32) 100%
   );
   pointer-events: none;
   z-index: 0;
