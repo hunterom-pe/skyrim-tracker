@@ -33,17 +33,31 @@ export type Database = {
         Row: Skill;
         Insert: Partial<Skill> & { slug: string; name: string; description: string };
         Update: Partial<Skill>;
+        Relationships: [];
       };
       xp_events: {
         Row: XpEvent;
-        Insert: Partial<XpEvent> & { skill_id: string; duration_minutes: number; xp_awarded: number };
+        Insert: Partial<XpEvent> & {
+          skill_id: string;
+          duration_minutes: number;
+          xp_awarded: number;
+        };
         Update: Partial<XpEvent>;
+        Relationships: [];
       };
       perks: {
         Row: Perk;
-        Insert: Partial<Perk> & { skill_id: string; unlock_level: number; name: string; description: string };
+        Insert: Partial<Perk> & {
+          skill_id: string;
+          unlock_level: number;
+          name: string;
+          description: string;
+        };
         Update: Partial<Perk>;
+        Relationships: [];
       };
     };
+    Views: Record<string, never>;
+    Functions: Record<string, never>;
   };
 };
