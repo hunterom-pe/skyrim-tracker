@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { href: "/log", label: "Log Session" },
   { href: "/history", label: "Quest Journal" },
   { href: "/perks", label: "Perks Earned" },
+  { href: "/rumors", label: "Rumor Board" },
 ];
 
 export function Nav() {

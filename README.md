@@ -18,9 +18,11 @@ complexity).
 ## Setup
 
 1. Create a Supabase project.
-2. In the Supabase SQL editor, run [`supabase/migrations/0001_init.sql`](supabase/migrations/0001_init.sql).
-   This creates the `skills`, `xp_events`, and `perks` tables and seeds the 7
-   skills and 21 perks.
+2. In the Supabase SQL editor, run [`supabase/migrations/0001_init.sql`](supabase/migrations/0001_init.sql),
+   then [`0002_rumor_entries.sql`](supabase/migrations/0002_rumor_entries.sql).
+   Together these create the `skills`, `xp_events`, `perks`, and
+   `rumor_entries` tables, and seed the 7 skills, 21 perks, and an initial
+   set of Elder Scrolls 6 rumor-board entries.
 3. Copy `.env.example` to `.env.local` and fill in:
    - `NEXT_PUBLIC_SUPABASE_URL` / `SUPABASE_SECRET_KEY` — from Supabase project settings → API.
    - `SITE_PASSWORD` — the password used to enter the app.
@@ -33,6 +35,14 @@ complexity).
    npm install
    npm run dev
    ```
+
+## Rumor Board
+
+`/rumors` is a hand-curated digest of Elder Scrolls 6 news, not a live feed —
+there's no cron job or RSS/API integration. To add a new entry once
+something surfaces, either insert a row into `rumor_entries` directly in the
+Supabase table editor, or ask Claude to check for Elder Scrolls 6 news and
+add a verified entry (original summary, real source URL, correct category).
 
 ## Ambient audio (optional)
 

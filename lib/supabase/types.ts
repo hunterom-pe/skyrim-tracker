@@ -26,6 +26,19 @@ export type Perk = {
   is_unlocked: boolean;
 };
 
+export type RumorCategory = "Confirmed" | "Rumor" | "Speculation";
+
+export type RumorEntry = {
+  id: string;
+  headline: string;
+  summary: string;
+  category: RumorCategory;
+  source_name: string;
+  source_url: string;
+  date_posted: string;
+  date_added: string;
+};
+
 export type Database = {
   public: {
     Tables: {
@@ -54,6 +67,19 @@ export type Database = {
           description: string;
         };
         Update: Partial<Perk>;
+        Relationships: [];
+      };
+      rumor_entries: {
+        Row: RumorEntry;
+        Insert: Partial<RumorEntry> & {
+          headline: string;
+          summary: string;
+          category: RumorCategory;
+          source_name: string;
+          source_url: string;
+          date_posted: string;
+        };
+        Update: Partial<RumorEntry>;
         Relationships: [];
       };
     };
