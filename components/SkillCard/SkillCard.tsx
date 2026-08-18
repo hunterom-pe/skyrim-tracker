@@ -8,7 +8,7 @@ export function SkillCard({ skill }: { skill: Skill }) {
   const xpToNext = xpToNextLevel(skill.current_level);
 
   return (
-    <div className={`${styles.card} panel`}>
+    <div className={`${styles.card} panel panel-hover`}>
       <div className={styles.header}>
         <h3 className={styles.name}>
           <Link href={`/skills/${skill.slug}`} className={styles.nameLink}>
