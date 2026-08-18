@@ -3,37 +3,16 @@
   text-align: center;
   padding: 2rem 1.5rem;
   margin-bottom: 2rem;
-  background:
+  background-color: var(--color-panel);
+  background-image:
     radial-gradient(ellipse at top, rgba(214, 175, 54, 0.08), transparent 60%),
-    var(--color-panel);
-}
-
-/* Carved corner brackets, like the frame of a game menu panel. */
-.banner::before,
-.banner::after {
-  content: "";
-  position: absolute;
-  top: 10px;
-  width: 18px;
-  height: 18px;
-  border-top: 2px solid var(--color-accent-dim);
-  pointer-events: none;
-}
-
-.banner::before {
-  left: 10px;
-  border-left: 2px solid var(--color-accent-dim);
-  border-top-left-radius: 3px;
-}
-
-.banner::after {
-  right: 10px;
-  border-right: 2px solid var(--color-accent-dim);
-  border-top-right-radius: 3px;
+    var(--texture-parchment);
+  background-blend-mode: overlay;
 }
 
 .eyebrow {
   margin: 0;
+  font-family: var(--font-heading);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -42,12 +21,12 @@
 
 .level {
   margin: 0.25rem 0;
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-weight: 700;
-  font-size: 3.5rem;
+  font-size: 3.75rem;
   line-height: 1;
   color: var(--color-accent-strong);
-  text-shadow: 0 0 24px rgba(214, 175, 54, 0.35);
+  text-shadow: var(--glow-amber), 0 0 24px rgba(214, 175, 54, 0.35);
 }
 
 .title {

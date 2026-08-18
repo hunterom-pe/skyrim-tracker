@@ -38,7 +38,7 @@ export default async function SkillDetailPage(props: PageProps<"/skills/[slug]">
         ← Back to Dashboard
       </Link>
 
-      <div className={`${styles.header} panel`}>
+      <div className={`${styles.header} panel panel-framed`}>
         <div className={styles.headerTop}>
           <h1 className={styles.name}>{skill.name}</h1>
           <span className={styles.level}>Lvl {skill.current_level}</span>

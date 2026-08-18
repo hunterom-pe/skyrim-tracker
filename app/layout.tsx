@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel, Inter } from "next/font/google";
+import { Cinzel, Cinzel_Decorative, EB_Garamond } from "next/font/google";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -8,7 +8,13 @@ const cinzel = Cinzel({
   weight: ["500", "600", "700"],
 });
 
-const inter = Inter({
+const cinzelDecorative = Cinzel_Decorative({
+  variable: "--font-cinzel-decorative",
+  subsets: ["latin"],
+  weight: ["700", "900"],
+});
+
+const ebGaramond = EB_Garamond({
   variable: "--font-body",
   subsets: ["latin"],
 });
@@ -21,7 +27,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${cinzel.variable} ${inter.variable}`}>{children}</body>
+      <body className={`${cinzel.variable} ${cinzelDecorative.variable} ${ebGaramond.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

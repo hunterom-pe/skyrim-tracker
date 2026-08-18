@@ -11,7 +11,7 @@ export function PerkListItem({
 }) {
   return (
     <div
-      className={`${styles.perk} panel ${perk.is_unlocked ? styles.unlocked : styles.locked}`}
+      className={`${styles.perk} panel panel-framed ${perk.is_unlocked ? styles.unlocked : styles.locked}`}
     >
       <div className={styles.top}>
         <span className={styles.unlockLevel}>Lvl {perk.unlock_level}</span>

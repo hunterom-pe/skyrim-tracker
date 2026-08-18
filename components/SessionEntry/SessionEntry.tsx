@@ -11,7 +11,7 @@ export function SessionEntry({
   skillName?: string;
 }) {
   return (
-    <div className={`${styles.entry} panel`}>
+    <div className={`${styles.entry} panel panel-framed`}>
       <div className={styles.top}>
         {skillName ? <span className={styles.skillName}>{skillName}</span> : null}
         <span className={styles.date}>{formatSessionDate(event.created_at)}</span>

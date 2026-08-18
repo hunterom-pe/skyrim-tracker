@@ -6,7 +6,7 @@ export function CharacterHeader({ skillLevels }: { skillLevels: number[] }) {
   const title = titleForCharacterLevel(level);
 
   return (
-    <div className={`${styles.banner} panel`}>
+    <div className={`${styles.banner} panel panel-framed`}>
       <p className={styles.eyebrow}>Character Level</p>
       <p className={styles.level}>{level}</p>
       <p className={styles.title}>{title}</p>
