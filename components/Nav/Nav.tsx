@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { logout } from "@/lib/auth/actions";
+import { AudioToggle } from "@/components/AudioToggle/AudioToggle";
 import styles from "./Nav.module.css";
 
 const NAV_LINKS = [
@@ -35,11 +36,14 @@ export function Nav() {
           );
         })}
       </nav>
-      <form action={logout}>
-        <button type="submit" className="button-secondary">
-          Log out
-        </button>
-      </form>
+      <div className={styles.actions}>
+        <AudioToggle />
+        <form action={logout}>
+          <button type="submit" className="button-secondary">
+            Log out
+          </button>
+        </form>
+      </div>
     </header>
   );
 }

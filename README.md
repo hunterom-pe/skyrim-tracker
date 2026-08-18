@@ -34,6 +34,12 @@ complexity).
    npm run dev
    ```
 
+## Ambient audio (optional)
+
+The header has a torch toggle for a looping ambient track, off by default.
+See [`public/audio/README.md`](public/audio/README.md) for what file to drop
+in — nothing else needs wiring up.
+
 ## Tests
 
 Pure XP/leveling logic is covered by Vitest:

@@ -41,3 +41,9 @@
   color: var(--color-accent-strong);
   background: rgba(214, 175, 54, 0.1);
 }
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
